@@ -37,6 +37,9 @@
   "name": "@kyleshevlin/use-common",
   "author": "Kyle Shevlin",
   "repository": "git@github.com:kyleshevlin/use-common.git",
+  "publishConfig": {
+    "access": "public"
+  },
   "module": "dist/use-common.esm.js",
   "size-limit": [
     {

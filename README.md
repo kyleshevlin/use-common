@@ -3,6 +3,7 @@
 Just some common custom React hooks so I don't have to keep writing them over and over.
 
 - `useBool`
+- `useCounter`
 - `useNumber`
 - `useString`
 

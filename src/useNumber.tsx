@@ -1,7 +1,9 @@
 import React from 'react'
 
+type Updater = number | ((currentState: number) => number)
+
 type Handlers = {
-  update: (number: number) => void
+  update: (updater: Updater) => void
   reset: () => void
   zero: () => void
 }
@@ -17,8 +19,8 @@ export default function useNumber(
 
   const handlers = React.useMemo(
     () => ({
-      update: (number: number) => {
-        setState(number)
+      update: (updater: Updater) => {
+        setState(updater)
       },
       reset: () => {
         setState(initialState)

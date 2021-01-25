@@ -35,6 +35,12 @@ describe('useNumber', () => {
     })
 
     expect(getState(result)).toEqual(7)
+
+    act(() => {
+      getHandlers(result).update((n: number) => n + 3)
+    })
+
+    expect(getState(result)).toEqual(10)
   })
 
   it('should reset to initialState when reset is fired', () => {

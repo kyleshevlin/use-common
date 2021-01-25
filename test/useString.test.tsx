@@ -35,6 +35,12 @@ describe('useString', () => {
     })
 
     expect(getState(result)).toEqual('hello')
+
+    act(() => {
+      getHandlers(result).update((str: string) => str + ' world')
+    })
+
+    expect(getState(result)).toEqual('hello world')
   })
 
   it('should reset to initialState when reset is fired', () => {

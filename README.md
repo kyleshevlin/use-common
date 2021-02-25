@@ -5,6 +5,7 @@ Just some common custom React hooks so I don't have to keep writing them over an
 - `useBool`
 - `useCounter`
 - `useNumber`
+- `usePrevious`
 - `useString`
 
 More to come.

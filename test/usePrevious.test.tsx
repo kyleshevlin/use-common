@@ -9,9 +9,10 @@ describe('usePrevious', () => {
   })
 
   it('should return the previous value', () => {
-    const callback = ({ value }: { value: any }) => usePrevious(value)
-    const options = { initialProps: { value: true } }
-    const { rerender, result } = renderHook(callback, options)
+    const { rerender, result } = renderHook(
+      ({ value }: { value: any }) => usePrevious(value),
+      { initialProps: { value: true } }
+    )
 
     rerender({ value: false })
 

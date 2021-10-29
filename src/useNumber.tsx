@@ -20,7 +20,13 @@ export default function useNumber(
   const handlers = React.useMemo(
     () => ({
       update: (updater: Updater) => {
-        setState(updater)
+        setState(s => {
+          if (typeof updater === 'function') {
+            return Number(updater(s))
+          }
+
+          return Number(updater)
+        })
       },
       reset: () => {
         setState(initialState)

@@ -20,7 +20,13 @@ export default function useString(
   const handlers = React.useMemo(
     () => ({
       update: (updater: Updater) => {
-        setState(updater)
+        setState(s => {
+          if (typeof updater === 'function') {
+            return String(updater(s))
+          }
+
+          return String(updater)
+        })
       },
       reset: () => {
         setState(initialState)

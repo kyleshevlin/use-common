@@ -1,10 +1,10 @@
 import React from 'react'
 
 type Handlers = {
-  setTrue: () => void
-  setFalse: () => void
-  toggle: () => void
+  off: () => void
+  on: () => void
   reset: () => void
+  toggle: () => void
 }
 
 export default function useBool(
@@ -18,17 +18,17 @@ export default function useBool(
 
   const handlers = React.useMemo(
     () => ({
-      setTrue: () => {
+      on: () => {
         setState(true)
       },
-      setFalse: () => {
+      off: () => {
         setState(false)
-      },
-      toggle: () => {
-        setState(s => !s)
       },
       reset: () => {
         setState(initialState)
+      },
+      toggle: () => {
+        setState(s => !s)
       },
     }),
     [initialState]

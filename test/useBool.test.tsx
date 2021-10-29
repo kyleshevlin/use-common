@@ -27,21 +27,21 @@ describe('useBool', () => {
     )
   })
 
-  it('should return false when setFalse is fired', () => {
+  it('should return false when off is fired', () => {
     const { result } = renderHook(() => useBool(true))
 
     act(() => {
-      getHandlers(result).setFalse()
+      getHandlers(result).off()
     })
 
     expect(getState(result)).toEqual(false)
   })
 
-  it('should return true when setTrue is fired', () => {
+  it('should return true when on is fired', () => {
     const { result } = renderHook(() => useBool())
 
     act(() => {
-      getHandlers(result).setTrue()
+      getHandlers(result).on()
     })
 
     expect(getState(result)).toEqual(true)
@@ -61,7 +61,7 @@ describe('useBool', () => {
     const { result } = renderHook(() => useBool(true))
 
     act(() => {
-      getHandlers(result).setFalse()
+      getHandlers(result).off()
     })
 
     act(() => {

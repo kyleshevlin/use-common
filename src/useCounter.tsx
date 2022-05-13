@@ -2,8 +2,8 @@ import React from 'react'
 import useNumber from './useNumber'
 
 type Handlers = {
-  inc: (number: number) => void
-  dec: (number: number) => void
+  inc: () => void
+  dec: () => void
   reset: () => void
   zero: () => void
 }
@@ -25,10 +25,10 @@ export default function useCounter(
   const handlers = React.useMemo(
     () => ({
       inc: () => {
-        update((n: number) => n + step)
+        update(n => n + step)
       },
       dec: () => {
-        update((n: number) => n - step)
+        update(n => n - step)
       },
       reset,
       zero,
